@@ -1,0 +1,13 @@
+This program is a simple Event Planner developed in Java. It allows to manage events with associated tasks, using a console interface. Functionalities include:
+
+1. Adding events with tasks and priority.
+2. List events and view details such as completed tasks.
+3. Modify tasks to mark or unmark them as completed.
+4. Delete events if they are no longer needed.
+
+The program uses basic structures like ArrayList, enum handling for priorities, and custom classes for events and tasks.
+
+Instructions
+
+- Run the HernandezClaudiaMain class to start.
+- Follow the menu options to interact with the planner.

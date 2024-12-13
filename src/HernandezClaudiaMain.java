@@ -142,7 +142,15 @@ public class HernandezClaudiaMain {
      * @param scanner tiene que leer lo que le pase el usuario para poder interactuar con el
      */
     private void borrarEvento(Scanner scanner) {
-
+        listarEventos();
+        System.out.print("Selecciona el número del evento que deseas borrar: ");
+        int numEvento = scanner.nextInt() - 1;
+        if (numEvento >= 0 && numEvento < eventos.size()) {
+            eventos.remove(numEvento);
+            System.out.println("Evento eliminado con éxito.");
+        } else {
+            System.out.println("Número de evento inválido.");
+        }
     }
 
     /**Metod para ver el listado de eventos
@@ -170,6 +178,12 @@ public class HernandezClaudiaMain {
         if (numEvento >= 0 && numEvento < eventos.size()) {
             HernandezClaudiaEvent evento = eventos.get(numEvento);
             System.out.println(evento);
+
+            // Listar las tareas del evento seleccionado
+            System.out.println("\nTareas del evento:");
+            for (int i = 0; i < evento.getTasks().size(); i++) {
+                System.out.println((i + 1) + ". " + evento.getTasks().get(i));
+            }
 
             System.out.print("Introduce el número de la tarea que quieres modificar: ");
             int numTarea = scanner.nextInt() - 1;
