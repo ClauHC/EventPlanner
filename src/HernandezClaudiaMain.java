@@ -2,14 +2,14 @@ import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
+public class HernandezClaudiaMain {
 
     /**Métod principal Main
      * se hace una llamada al nétod inicio para correr el programa
      * @param args
      */
     public static void main(String[] args) {
-        Main programa = new Main();
+        HernandezClaudiaMain programa = new HernandezClaudiaMain();
         programa.inicio();
     }
 
@@ -23,7 +23,7 @@ public class Main {
 
 
 
-    /**Metod del menú
+     /**Metod del menú
      *
      *
      */
