@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -14,27 +15,19 @@ public class HernandezClaudiaMain {
         programa.menuEventPlanner();
     }
 
-    /**Metdo inicio
-     * métodoo que se llama en el main. Aqui va lo que iría en el Main normalmente. Cambio necesario para poder usar programacion modular.
-     * No necesita parametros de entrada
+    /**Variable global
+     * Se crea una variable global ArrayList para guardar todos los eventos y que se deje usar en todos los metodos sin dar palo
      */
-    public void inicio(){
+    private ArrayList<HernandezClaudiaEvent> eventos = new ArrayList<>();
 
-        HernandezClaudiaEvent evento = new HernandezClaudiaEvent("entrega practica java", LocalDate.now(), Priority.HIGH);
-
-        evento.addTask("terminar código");
-        evento.addTask("hacer readme");
-
-        System.out.println(evento);
-    }
-
-     /**Metod del menú
+    /**Metod del menú
      *
      *
      */
     public void menuEventPlanner () {
 
-        //Menú de opciones
+        ArrayList<HernandezClaudiaEvent> evento = new ArrayList<>();
+
         Scanner scanner = new Scanner(System.in);
         int numMenu;
 
@@ -104,12 +97,13 @@ public class HernandezClaudiaMain {
 
         System.out.print("Selecciona la prioridad (1 = HIGH, 2 = MEDIUM, 3 = LOW): ");
         int numPrioridad = scanner.nextInt();
+        //Nota para mi: recordar que los enum funcionan como un array
         Priority prioridad = Priority.values()[numPrioridad - 1];
 
-        HernandezClaudiaEvent evento = new HernandezClaudiaEvent(title, date, prioridad);
-        evento.addTask(String.valueOf(evento));
-
-        System.out.println(" Evento: " + evento + "\n !Añadido con éxito!");
+        // Crear el evento y agregarlo a la lista
+        HernandezClaudiaEvent eventoNuevo = new HernandezClaudiaEvent(title, date, prioridad);
+        eventos.add(eventoNuevo);
+        System.out.println("\n Evento: " + eventoNuevo + "\n !Añadido con éxito!");
     }
 
     /**Metdo para borrar eventos
@@ -123,7 +117,13 @@ public class HernandezClaudiaMain {
      *
      */
     private void listarEventos() {
-
+        if (eventos.isEmpty()) {
+            System.out.println("Tu listado de eventos está más vacío que un salón de clases durante la pandemia. ¡Empecemos a llenarlo!");
+        } else {
+            for (int i = 0; i < eventos.size(); i++) {
+                System.out.println("Evento " + (i + 1) + ": " + eventos.get(i));
+            }
+        }
     }
 
     /**Metod para modificar los tasks
