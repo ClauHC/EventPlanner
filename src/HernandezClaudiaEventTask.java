@@ -12,22 +12,34 @@ public class HernandezClaudiaEventTask {
         this.isCompleted = false;
     }
 
-    /** Métod para marcar la tarea como completada
+    /**Métod para marcar la tarea como completada
      * No lleva parámetros de entrada
      */
     public void marcarCompletada() {
         isCompleted = true;
     }
 
+    /**Métod para desmarcar la tarea como completada
+     * No lleva parámetros de entrad
+     */
+    public void desmarcarCompletada() {
+        isCompleted = false;
+    }
+
+    /**Getter de isCompleted
+     *
+     * @return isCompleted el boolean de si la tarea está completada o no
+     */
+    public boolean isCompleted() {
+        return isCompleted;
+    }
 
     /** Métod toString para mostrar los detalles de la tarea
      *
      */
     @Override
     public String toString() {
-        return "HernandezClaudiaEventTask{" +
-                "text='" + text + '\'' +
-                ", isCompleted=" + isCompleted +
-                '}';
+        return "text: " + text +
+                "\n Está completada: " + isCompleted;
     }
 }

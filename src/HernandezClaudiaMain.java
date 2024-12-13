@@ -11,7 +11,7 @@ public class HernandezClaudiaMain {
      */
     public static void main(String[] args) {
         HernandezClaudiaMain programa = new HernandezClaudiaMain();
-        programa.inicio();
+        programa.menuEventPlanner();
     }
 
     /**Metdo inicio
@@ -22,11 +22,10 @@ public class HernandezClaudiaMain {
 
         HernandezClaudiaEvent evento = new HernandezClaudiaEvent("entrega practica java", LocalDate.now(), Priority.HIGH);
 
-        System.out.println(evento);
-
         evento.addTask("terminar código");
         evento.addTask("hacer readme");
 
+        System.out.println(evento);
     }
 
      /**Metod del menú
@@ -41,7 +40,7 @@ public class HernandezClaudiaMain {
 
         do {
             // Mostrar el menú
-            System.out.println("\nBienvenido a Event Planner. Seleccione una opción");
+            System.out.println("\n Bienvenido a Event Planner. Seleccione una opción");
             System.out.println("[1] Añadir evento");
             System.out.println("[2] Borrar evento");
             System.out.println("[3] Listar eventos");
@@ -57,25 +56,67 @@ public class HernandezClaudiaMain {
 
             // Procesar la opción seleccionada
             switch (numMenu) {
+
                 case 1:
-
+                    System.out.println("\n Vamos a añadir un evento");
+                    agregarEvento(scanner);
                     break;
+
                 case 2:
-
+                    System.out.println("\n Vamos a borrar un evento");
+                    borrarEvento(scanner);
                     break;
+
                 case 3:
-
+                    System.out.println("\n Vamos a ver el listado de eventos que hay");
+                    listarEventos();
                     break;
+
                 case 4:
-
+                    System.out.println("\n Quieres modificar una tarea");
+                    modificarTareas(scanner);
                     break;
+
                 case 5:
-
+                    // Salir del programa
+                    System.out.println("¡Adiós!");
                     break;
+
                 default:
                     System.out.println("Opción no válida. Intenta de nuevo.");
             }
-        } while (numMenu != 4);
+        } while (numMenu != 5);
     }
+
+    /**Metod para agregar un evento
+     *
+     * @param scanner
+     */
+    private void agregarEvento(Scanner scanner) {
+
+    }
+
+    /**Metdo para borrar eventos
+     *
+     */
+    private void borrarEvento(Scanner scanner) {
+
+    }
+
+    /**Metod para ver el listado de eventos
+     *
+     */
+    private void listarEventos() {
+
+    }
+
+    /**Metod para modificar los tasks
+     *
+     * @param scanner
+     */
+    private void modificarTareas(Scanner scanner) {
+
+    }
+
 
 }

@@ -24,16 +24,21 @@ public class HernandezClaudiaEvent {
         this.tasks.add(new HernandezClaudiaEventTask(name));
     }
 
-
     /** Métod toString
      *
      * @return
      */
     @Override
     public String toString() {
+        int count = 0;
+        for (HernandezClaudiaEventTask task : tasks) {
+            if (task.isCompleted()){
+                count++;
+            }
+        }
         return "\n Nombre del evento: " + title +
                 "\n Fecha: " + date +
                 "\n Prioridad: " + prioridad +
-                "\n Tareas completadas: " + tasks.size();
+                "\n Tareas dompletadas: " + count + " de " + tasks.size();
     }
 }
