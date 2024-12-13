@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -19,15 +20,21 @@ public class HernandezClaudiaMain {
      */
     public void inicio(){
 
+        HernandezClaudiaEvent evento = new HernandezClaudiaEvent("entrega practica java", LocalDate.now(), Priority.HIGH);
+
+        System.out.println(evento);
+
+        evento.addTask("terminar código");
+        evento.addTask("hacer readme");
+
     }
-
-
 
      /**Metod del menú
      *
      *
      */
     public void menuEventPlanner () {
+
         //Menú de opciones
         Scanner scanner = new Scanner(System.in);
         int numMenu;

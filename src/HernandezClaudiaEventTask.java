@@ -23,5 +23,11 @@ public class HernandezClaudiaEventTask {
     /** Métod toString para mostrar los detalles de la tarea
      *
      */
-
+    @Override
+    public String toString() {
+        return "HernandezClaudiaEventTask{" +
+                "text='" + text + '\'' +
+                ", isCompleted=" + isCompleted +
+                '}';
+    }
 }
