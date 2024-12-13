@@ -18,10 +18,22 @@ public class HernandezClaudiaEvent {
     }
 
     /** Métod para agregar tarea
-     *
+     * Permite agregar una tarea desde un objeto o creando una nueva desde un String.
      */
     public void addTask (String name){
         this.tasks.add(new HernandezClaudiaEventTask(name));
+    }
+
+    public void addTask(HernandezClaudiaEventTask task) {
+        this.tasks.add(task);
+    }
+
+    /**Métod para obtener la lista de tareas
+     *
+     * @return
+     */
+    public ArrayList<HernandezClaudiaEventTask> getTasks() {
+        return tasks;
     }
 
     /** Métod toString

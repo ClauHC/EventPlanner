@@ -39,7 +39,7 @@ public class HernandezClaudiaEventTask {
      */
     @Override
     public String toString() {
-        return "text: " + text +
+        return "Tarea: " + text +
                 "\n Está completada: " + isCompleted;
     }
 }
